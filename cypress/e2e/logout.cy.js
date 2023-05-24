@@ -1,10 +1,10 @@
-describe('login into profile', () => {
-  it('Try to log in, fill valid information to see if we get into profile', () => {
+describe('logout of profile', () => {
+  it('after log in, pressing logout should log out from the users profile', () => {
     cy.visit('http://127.0.0.1:5500/index.html');
 
     cy.wait(1000);
 
-    cy.get('button#register-button-login').click();
+    cy.get('button#register-button-login').click({ force: true });
 
     cy.wait(1000);
 
@@ -28,5 +28,7 @@ describe('login into profile', () => {
     cy.wait(1000);
 
     cy.get('button#main-page-logout').click();
+
+    cy.url().should('contain', 'http://127.0.0.1:5500/');
   });
 });
