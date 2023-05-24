@@ -23,5 +23,3 @@ export const localStorageMock = (function () {
     },
   };
 })();
-
-Object.defineProperty(global, 'localStorage', { value: localStorageMock });
